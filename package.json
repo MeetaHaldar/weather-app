@@ -1,0 +1,31 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "a app which will show you weather of any city you want",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeetaHaldar/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "api",
+    "app",
+    "city"
+  ],
+  "author": "Meeta haldar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeetaHaldar/weather-app/issues"
+  },
+  "homepage": "https://github.com/MeetaHaldar/weather-app#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
