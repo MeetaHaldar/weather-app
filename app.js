@@ -2,8 +2,7 @@ const express = require("express");
 const https = require("https");
 const bodyParser = require("body-parser");
 const app = express();
-
-
+app.use(express.static("/public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/index.html");
@@ -23,17 +22,21 @@ app.post("/", function (req, res) {
     console.log(response.statusCode);
     response.on("data", function (data) {
       const weatherData = JSON.parse(data);
-      const temp = weatherData.current.wind_degree;
+      const temp = weatherData.current.temp_c;
       const icon = weatherData.current.condition.icon;
-      console.log(temp);
-      res.write(" <h1>the temp is = " + temp + "</h1>");
-      res.write(`<img src=${icon} />`);
-      res.send();
+       res.write("<h1>the temp is = " + temp + "</h1>");
+        res.write(`<img src=${icon} />`);
+            res.send();
     });
   });
 
   console.log("form got submitted!!");
 });
+
+
+
+
+
 
 app.listen(4000, function () {
   console.log("app is running on port 4000");
